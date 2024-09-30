@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet">
+        <script src="index.js"></script>
+        <title>
+            Equipment Calculator Website
+        </title>
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html">Relics</a>
+            <a href="index.html">Materials</a>
+            <a href="index.html">Schedule</a>
+         </nav>
+        <h1>HSR Equipment Calculator</h1>
+        <p>Input your character and relic to calculate a relic score</p>
+        <form method="" action=''> <!--tbd-->
+            <fieldset>
+                <div class="dropdown-container">
+                    <label for="custom-select">Select Character Name: </label>
+                    <div class="dropdown">
+                        <div id="custom-select" class="select-btn">Select One</div> <!--should get replaced by char name-->
+                        <div class="dropdown-content">
+                            <div class="submenu">
+                                <a href="#">Amplifier</a>
+                                <div class="submenu-content">
+                                    <a href="#">Asta</a> <!--pics next to names-->
+                                    <a href="#">Bronya</a>
+                                    <a href="#">Hanya</a>
+                                    <a href="#">Harmony MC</a>
+                                    <a href="#">Pela</a>
+                                    <a href="#">Robin</a>
+                                    <a href="#">Ruan Mei</a>
+                                    <a href="#">Silver Wolf</a>
+                                    <a href="#">Sparkle</a>
+                                    <a href="#">Tingyun</a>
+                                    <a href="#">Yukong</a>
+                                </div>
+                            </div>
+                            <div class="submenu">
+                                <a href="#">Damage Dealer</a> 
+                                <div class="submenu-content">
+                                    <a href="#">Acheron</a> <!--too long, make scroll-->
+                                    <a href="#">Argenti</a>
+                                    <a href="#">Arlan</a>
+                                    <a href="#">Blade</a>
+                                    <a href="#">Clara</a>
+                                    <a href="#">Dan Heng</a>
+                                    <a href="#">Dan Hang IL</a>
+                                    <a href="#">Destruction MC</a>
+                                    <a href="#">Dr. Ratio</a>
+                                    <a href="#">Herta</a>
+                                    <a href="#">Himeko</a>
+                                    <a href="#">Hook</a>
+                                    <a href="#">Jingliu</a>
+                                    <a href="#">Jing Yuan</a>
+                                    <a href="#">Misha</a>
+                                    <a href="#">Qingque</a>
+                                    <a href="#">Seele</a>
+                                    <a href="#">Serval</a>
+                                    <a href="#">Yanqing</a>
+                                </div>
+                            </div>
+                            <div class="submenu">
+                                <a href="#">Specialist</a>
+                                <div class="submenu-content">
+                                    <a href="#">Black Swan</a>
+                                    <a href="#">Boothill</a>
+                                    <a href="#">Firefly</a>
+                                    <a href="#">Guinafen</a>
+                                    <a href="#">Jade</a>
+                                    <a href="#">Kafka</a>
+                                    <a href="#">Luka</a>
+                                    <a href="#">Preservation MC</a>
+                                    <a href="#">Sampo</a>
+                                    <a href="#">Sushang</a>
+                                    <a href="#">Topaz</a>
+                                    <a href="#">Xueyi</a>
+                                    <a href="#">Welt</a>
+                                </div>
+                            </div>
+                            <div class="submenu">
+                                <a href="#">Sustain</a>
+                                <div class="submenu-content">
+                                    <a href="#">Aventurine</a>
+                                    <a href="#">Bailu</a>
+                                    <a href="#">Fu Xuan</a>
+                                    <a href="#">Gallagher</a>
+                                    <a href="#">Gepard</a>
+                                    <a href="#">Huohuo</a>
+                                    <a href="#">Luocha</a>
+                                    <a href="#">Lynx</a>
+                                    <a href="#">March 7th</a>
+                                    <a href="#">Natasha</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="char-image-box">
+                        <img src="pom-pom-astral-express.gif" id="char-img">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <label for="profile-picture">Upload a screenshot of your relic stats: </label>
+                <input id="profile-picture" type="file" name="file" />
+            </fieldset>
+            <!--label for="tbd">
+                <input class="inline" id="tbd" type="checkbox" required/>(IDK, no functionality yet)</a>
+            </label-->
+            <input type="submit" value="Calculate" />
+        </form>
+    </body>
+</html>

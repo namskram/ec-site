@@ -1,0 +1,48 @@
+name: merge-by-keyword
+on:
+  push
+
+jobs:
+    merge-branch:
+        if: contains(github.event.head_commit.message, 'merge')
+        runs-on: ubuntu-latest
+
+        permissions:
+          contents: write
+          pull-requests: write
+          issues: write
+
+        steps:
+          - name: Git checkout
+            uses: actions/checkout@v4
+            with:
+              fetch-depth: '0'
+              repository: namskram/personal-website
+              token: ${{ secrets.GIT }}
+
+          - name: Get branch names
+            id: branch-names
+            uses: tj-actions/branch-names@v8
+
+          - name: Set Git config
+            run: |
+              git --version
+              git config user.name "$(git log -n 1 --pretty=format:%an)"
+              git config user.email "$(git log -n 1 --pretty=format:%ae)"
+              git status
+
+          - name: Merge into main
+            env:
+              GH_TOKEN: ${{ secrets.GIT }}
+              BRANCH_NAME: ${{ steps.branch-names.outputs.ref_branch }}
+            run: |
+              echo $BRANCH_NAME
+              git fetch
+              git checkout main
+              git pull
+              git merge --squash origin/$BRANCH_NAME
+              git commit -m "added feature $BRANCH_NAME"
+              git push
+
+
+

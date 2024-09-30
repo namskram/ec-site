@@ -1,0 +1,179 @@
+/* for testing*/
+/*
+* {
+    border: solid 1px black;
+}
+*/
+
+nav {
+    text-align: center;
+    word-spacing: 30px;
+    padding: 15px;
+    background-color: #2b2b4a;
+}
+
+nav a {
+    color: #f5f6f7;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: #1b1b32;
+    color: #f5f6f7;
+    font-family: Tahoma;
+    font-size: 16px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+  
+p {
+    margin: 1em auto;
+    text-align: center;
+}
+  
+form {
+    width: 60vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 2em;
+}
+  
+fieldset {
+    border: none;
+    padding: 1rem 0;
+    border-bottom: 3px solid #3b3b4f;
+}
+  
+fieldset:last-of-type {
+    border-bottom: none;
+}
+  
+label {
+    display: block;
+    margin: 0.5rem 0;
+    white-space: nowrap;
+}
+  
+input {
+    background-color: #0a0a23;
+    border: 1px solid #0a0a23;
+    color: #ffffff;
+}
+  
+input[type="submit"] {
+    display: block;
+    width: 60%;
+    margin: 1em auto;
+    height: 2em;
+    font-size: 1.1rem;
+    background-color: #3b3b4f;
+    border-color: white;
+    min-width: 300px;
+}
+  
+input[type="file"] {
+    padding: 1px 2px;
+}
+
+/* Container for the label and dropdown */
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    width: 120px; /* Adjusted width for longer label */
+    margin: 0 auto;
+}
+
+/* Container for the dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* The button that looks like a select box */
+.select-btn {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 8px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: black;
+}
+
+/* The dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for each option */
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Option hover effect */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown when hovering over the main button */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Submenu for Option 2 */
+.submenu {
+    position: relative;
+}
+
+/* Style the submenu content */
+.submenu-content {
+    display: none;
+    position: absolute;
+    left: 100%; /* Ensure the submenu appears outside the dropdown */
+    top: 0;
+    min-width: 160px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 10; /* Higher z-index to stay above other content */
+    overflow: visible; /* Make sure it doesn’t clip */
+}
+
+/* Show the submenu when hovering over Option 2 */
+.submenu:hover .submenu-content {
+    display: block;
+}
+
+/* Arrow icon */
+.select-btn::after {
+    content: '\25BC'; /* Unicode for down arrow */
+    float: right;
+    margin-left: 10px;
+}
+
+#char-img {
+    width: 150px;
+}
