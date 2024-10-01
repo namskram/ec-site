@@ -52,6 +52,7 @@ fieldset {
   
 fieldset:last-of-type {
     border-bottom: none;
+    text-align: center;
 }
   
 label {
@@ -85,7 +86,7 @@ input[type="file"] {
 .dropdown-container {
     display: flex;
     flex-direction: column;
-    width: 120px; /* Adjusted width for longer label */
+    width: 130px; /* Adjusted width for longer label */
     margin: 0 auto;
 }
 
