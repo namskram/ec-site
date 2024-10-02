@@ -82,6 +82,38 @@ input[type="file"] {
     padding: 1px 2px;
 }
 
+/* Error tooltip styling, similar to browser's validation popup */
+.error-tooltip {
+    position: absolute;
+    background-color: #f44336; /* Red background */
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 0.875em;
+    z-index: 10;
+    width: max-content;
+    white-space: nowrap;
+    left: 0;
+    top: 100%; /* Positioned below the dropdown */
+    transform: translateY(8px); /* Slight offset */
+}
+
+/* Arrow for the error tooltip */
+.error-tooltip::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: 10px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent transparent #f44336 transparent;
+}
+
+/* Highlight dropdown border if invalid */
+.select-btn.invalid {
+    border: 2px solid red;
+}
+
 /* Container for the label and dropdown */
 .dropdown-container {
     display: flex;
