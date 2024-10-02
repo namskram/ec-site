@@ -210,3 +210,8 @@ input[type="file"] {
 #char-img {
     width: 150px;
 }
+
+#confirmation-message {
+    text-align: center;
+    margin: 0 auto;
+}
