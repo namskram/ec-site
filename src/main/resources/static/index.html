@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet">
+        <script src="index.js"></script>
+        <title>
+            Equipment Calculator Website
+        </title>
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html">Relics</a>
+            <a href="index.html">Materials</a>
+            <a href="index.html">Schedule</a>
+         </nav>
+        <h1>HSR Equipment Calculator</h1>
+        <p>Input your character and relic to calculate a relic score</p>
+        <form id="uploadForm" action="http://localhost:8080/upload" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <div class="dropdown-container">
+                    <label for="custom-select">Select a Character: </label>
+                    <div class="dropdown">
+                        <div id="custom-select" class="select-btn">(Select One)</div> 
+                        <div class="dropdown-content">
+                            <div class="submenu">
+                                <a href="#">Amplifier</a>
+                                <div class="submenu-content">
+                                    <a href="#" data-value="">Asta <img src="images/asta.png"></a>
+                                    <a href="#" data-value="">Bronya <img src="images/bronya.png"></a>
+                                    <a href="#" data-value="">Hanya <img src="images/hanya.png"></a>
+                                    <a href="#" data-value="">Harmony MC <img src="images/mc.png"></a>
+                                    <a href="#" data-value="">Pela <img src="images/pela.png"></a>
+                                    <a href="#" data-value="">Robin <img src="images/robin.png"></a>
+                                    <a href="#" data-value="">Ruan Mei <img src="images/ruan mei.png"></a>
+                                    <a href="#" data-value="">Silver Wolf <img src="images/silver wolf.png"></a>
+                                    <a href="#" data-value="">Sparkle <img src="images/sparkle.png"></a>
+                                    <a href="#" data-value="">Tingyun <img src="images/tingyun.png"></a>
+                                    <a href="#" data-value="">Yukong <img src="images/yukong.png"></a>
+                                </div>
+                            </div>
+                            <div class="submenu">
+                                <a href="#">Damage Dealer</a> 
+                                <div class="submenu-content">
+                                    <a href="#" data-value="">Acheron <img src="images/acheron.png"></a>
+                                    <a href="#" data-value="">Argenti <img src="images/argenti.png"></a>
+                                    <a href="#" data-value="">Arlan <img src="images/arlan.png"></a>
+                                    <a href="#" data-value="">Blade <img src="images/blade.png"></a>
+                                    <a href="#" data-value="">Clara <img src="images/clara.png"></a>
+                                    <a href="#" data-value="">Dan Heng <img src="images/dan heng.png"></a>
+                                    <a href="#" data-value="">Dan Hang IL <img src="images/dhil.png"></a>
+                                    <a href="#" data-value="">Destruction MC <img src="images/mc.png"></a>
+                                    <a href="#" data-value="">Dr. Ratio <img src="images/dr ratio.png"></a>
+                                    <a href="#" data-value="">Herta <img src="images/herta.png"></a>
+                                    <a href="#" data-value="">Himeko <img src="images/himeko.png"></a>
+                                    <a href="#" data-value="">Hook <img src="images/hook.png"></a>
+                                    <a href="#" data-value="">Jingliu <img src="images/jingliu.png"></a>
+                                    <a href="#" data-value="">Jing Yuan <img src="images/jing yuan.png"></a>
+                                    <a href="#" data-value="">Misha <img src="images/misha.png"></a>
+                                    <a href="#" data-value="">Qingque <img src="images/qingque.png"></a>
+                                    <a href="#" data-value="">Seele <img src="images/seele.png"></a>
+                                    <a href="#" data-value="">Serval <img src="images/serval.png"></a>
+                                    <a href="#" data-value="">Yanqing <img src="images/yanqing.png"></a>
+                                </div>
+                            </div>
+                            <div class="submenu">
+                                <a href="#">Specialist</a>
+                                <div class="submenu-content">
+                                    <a href="#" data-value="">Black Swan <img src="images/black swan.png"></a>
+                                    <a href="#" data-value="">Boothill <img src="images/boothill.png"></a>
+                                    <a href="#" data-value="">Firefly <img src="images/firefly.png"></a>
+                                    <a href="#" data-value="">Guinafen <img src="images/guinafen.png"></a>
+                                    <a href="#" data-value="">Jade <img src="images/jade.png"></a>
+                                    <a href="#" data-value="">Kafka <img src="images/kafka.png"></a>
+                                    <a href="#" data-value="">Luka <img src="images/luka.png"></a>
+                                    <a href="#" data-value="">Preservation MC <img src="images/mc.png"></a>
+                                    <a href="#" data-value="">Sampo <img src="images/sampo.png"></a>
+                                    <a href="#" data-value="">Sushang <img src="images/sushang.png"></a>
+                                    <a href="#" data-value="">Topaz <img src="images/topaz.png"></a>
+                                    <a href="#" data-value="">Xueyi <img src="images/xueyi.png"></a>
+                                    <a href="#" data-value="">Welt <img src="images/welt.png"></a>
+                                </div>
+                            </div>
+                            <div class="submenu">
+                                <a href="#">Sustain</a>
+                                <div class="submenu-content">
+                                    <a href="#" data-value="">Aventurine <img src="images/aventurine.png"></a>
+                                    <a href="#" data-value="">Bailu <img src="images/bailu.png"></a>
+                                    <a href="#" data-value="">Fu Xuan <img src="images/fu xuan.png"></a>
+                                    <a href="#" data-value="">Gallagher <img src="images/gallagher.png"></a>
+                                    <a href="#" data-value="">Gepard <img src="images/gepard.png"></a>
+                                    <a href="#" data-value="">Huohuo <img src="images/huohuo.png"></a>
+                                    <a href="#" data-value="">Luocha <img src="images/luocha.png"></a>
+                                    <a href="#" data-value="">Lynx <img src="images/lynx.png"></a>
+                                    <a href="#" data-value="">March 7th <img src="images/march 7th.png"></a>
+                                    <a href="#" data-value="">Natasha <img src="images/natasha.png"></a>
+                                </div>
+                            </div>
+                            <!-- Simulated validation "tooltip" popup -->
+                            <div id="dropdown-error" class="error-tooltip" style="display:none;">
+                                Please select a character.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="char-image-box">
+                        <img src="images/pom-pom-astral-express.gif" id="char-img">
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
+                <label for="screenshot">Upload a screenshot of your relic stats: </label>
+                <input id="screenshot" type="file" name="file" id="screenshot" required/> <!--add image preview-->
+                <img id="preview" src="#" alt="preview"/>
+            </fieldset>
+
+            <!-- Hidden input to store the selected value -->
+            <input type="hidden" id="selectedOption" name="selectedOption" required>
+
+            <div id="confirmation-message" style="display:none;"></div>
+
+            <!--label for="tbd">
+                <input class="inline" id="tbd" type="checkbox">(IDK, no functionality yet)</a>
+            </label-->
+            <input type="submit" value="Calculate" />
+        </form>
+    </body>
+</html>
