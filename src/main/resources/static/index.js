@@ -60,4 +60,13 @@ document.addEventListener('DOMContentLoaded', function() {
             confirmationMessage.style.color = 'red'; // Optional: Change text color to red
         }
     });
+
+    screenshot.onchange = evt => {
+        const [file] = screenshot.files
+        if (file) {
+            preview.src = URL.createObjectURL(file)
+            var img = document.getElementById('preview');
+            img.style.visibility = 'visible';
+        }
+      }
 });

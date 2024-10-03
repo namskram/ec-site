@@ -141,6 +141,11 @@ input[type="file"] {
     font-family: Arial, sans-serif;
     font-size: 14px;
     color: black;
+    height: 20px; /* Fix the height to prevent random resizing */
+    line-height: 20px; /* Vertically align text */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Prevent text overflow */
+    text-overflow: ellipsis; /* Add '...' if text is too long */
 }
 
 /* The dropdown content (hidden by default) */
@@ -186,18 +191,30 @@ input[type="file"] {
     position: absolute;
     left: 100%; /* Ensure the submenu appears outside the dropdown */
     top: 0;
-    min-width: 160px;
+    min-width: 175px;
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
     z-index: 10; /* Higher z-index to stay above other content */
     overflow: visible; /* Make sure it doesn’t clip */
+    text-align: center;
+    max-height: 315px; /* Enable scrolling so the submenu isn't too long */
+    overflow-y: auto;
 }
 
 /* Show the submenu when hovering over Option 2 */
 .submenu:hover .submenu-content {
     display: block;
+}
+
+.submenu:hover .submenu-content img {
+    width: 25px;
+    vertical-align: bottom;
+}
+
+.submenu:hover .submenu-content img[src^="images/pela.png"] {
+    width: 20px;
 }
 
 /* Arrow icon */
@@ -208,10 +225,18 @@ input[type="file"] {
 }
 
 #char-img {
+    margin-top: 10px;
     width: 150px;
 }
 
 #confirmation-message {
     text-align: center;
     margin: 0 auto;
+}
+
+#preview {
+    margin: 10px auto;
+    display: block;
+    visibility: hidden;
+    border: solid 2px black;
 }
