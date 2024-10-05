@@ -28,7 +28,7 @@ import net.sourceforge.tess4j.TesseractException;
 @Service
 public class CalculationService {
 
-    public static void calculate(String charName, File file) 
+    public double calculate(String charName, File file) 
                                             throws IOException, NoSuchMethodException, ClassNotFoundException, 
                                             InstantiationException, IllegalAccessException, 
                                             IllegalArgumentException, InvocationTargetException {
@@ -43,10 +43,11 @@ public class CalculationService {
 
         File newFile = new File(newFilePath);
 
-        ExtractTextAndNumbers(charName, newFile);
+        double score = ExtractTextAndNumbers(charName, newFile);
+        return score;
     }
 
-    public static void ExtractTextAndNumbers(String charName, File file) 
+    public static double ExtractTextAndNumbers(String charName, File file) 
                                             throws IOException, NoSuchMethodException, ClassNotFoundException, 
                                             InstantiationException, IllegalAccessException, 
                                             IllegalArgumentException, InvocationTargetException {
@@ -77,13 +78,16 @@ public class CalculationService {
 
             Double score = calculateScores(charName, newVals);
             Double roundedScore = round(score, 2);
-            System.out.println("Relic Score: " + roundedScore);
-            System.out.println("------------------------------ \n");
+            // System.out.println("Relic Score: " + roundedScore);
+            // System.out.println("------------------------------ \n");
+
+            return roundedScore;
             
 
         } catch (TesseractException e) {
             System.err.println("Error during OCR: " + e.getMessage());
         }
+        return 0;
     }
 
     public static String includeStringsWithPercentage(String text, String[] includeStrings) {

@@ -16,6 +16,9 @@ import org.springframework.boot.autoconfigure.ssl.SslProperties;
 @RestController
 public class FileUploadController {
 
+    @Autowired
+    private CalculationService calculationService;
+
     @PostMapping("/upload")
     public ResponseEntity<?> handleFileUpload(
             @RequestParam("selectedOption") String selectedOption,
@@ -32,6 +35,8 @@ public class FileUploadController {
             uploadDir.mkdirs(); // Create directory if it doesn't exist
         }
 
+        double result = 0;
+
         // Log the selected option
         System.out.println("Selected Character: " + selectedOption);
 
@@ -44,10 +49,10 @@ public class FileUploadController {
             file.transferTo(saveFile);
 
             System.out.println("File saved at: " + saveFile.getAbsolutePath());
-            CalculationService.calculate(selectedOption, saveFile);
+            result = calculationService.calculate(selectedOption, saveFile);
         }
 
         // Return JSON response with success message
-        return ResponseEntity.ok().body("{\"message\":\"File and selected option processed successfully!\"}");
+        return ResponseEntity.ok().body("{\"result\":\"" + result + "\"}");
     }
 }

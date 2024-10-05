@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (response.ok) {
                 const data = await response.json(); // Parse the JSON response
-                confirmationMessage.textContent = data.message; // Display the confirmation message
+                confirmationMessage.textContent = `Weighted Relic Score: ${data.result}`; // Display the confirmation message
                 confirmationMessage.style.display = 'block'; // Show the message
                 confirmationMessage.style.color = 'green'; // Optional: Change text color to green
             } else {
