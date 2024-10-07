@@ -36,23 +36,41 @@ public class FileUploadController {
         }
 
         double result = 0;
+        String color = "red";
 
         // Log the selected option
         System.out.println("Selected Character: " + selectedOption);
 
         if (!file.isEmpty()) {
             String fileName = file.getOriginalFilename();
-            System.out.println("Uploaded File Name: " + fileName);
+            // FOR DEBUGGING
+            // System.out.println("Uploaded File Name: " + fileName);
 
             // Save the file
             File saveFile = new File(uploadDir, fileName);
             file.transferTo(saveFile);
 
-            System.out.println("File saved at: " + saveFile.getAbsolutePath());
+            // FOR DEBUGGING
+            // System.out.println("File saved at: " + saveFile.getAbsolutePath());
             result = calculationService.calculate(selectedOption, saveFile);
         }
 
+        if (result < 5) {
+        }
+        else if (result >= 5 && result < 9) {
+            color = "orange";
+        }
+        else if (result >= 9 && result < 12) {
+            color = "yellow";
+        }
+        else if (result >= 12 && result < 15) {
+            color = "green";
+        }
+        else {
+            color = "cyan";
+        }
+
         // Return JSON response with success message
-        return ResponseEntity.ok().body("{\"result\":\"" + result + "\"}");
+        return ResponseEntity.ok().body("{\"result\":" + result + ", \"color\":\"" + color + "\"}");
     }
 }

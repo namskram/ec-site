@@ -33,13 +33,14 @@ public class CalculationService {
                                             InstantiationException, IllegalAccessException, 
                                             IllegalArgumentException, InvocationTargetException {
         
-        System.out.println("Service is working:");
+        // FOR DEBUGGING
+        // System.out.println("Service is working:");
         System.out.println("Character: " + charName);
         System.out.println("File Name: " + file.getName());
-        System.out.println("FIle Path: " + file.getAbsolutePath());
+        // System.out.println("FIle Path: " + file.getAbsolutePath());
 
         String newFilePath = ImagePreprocessingService.modifyImage(file.getAbsolutePath());
-        System.out.println("New File Path: " + newFilePath);
+        // System.out.println("New File Path: " + newFilePath);
 
         File newFile = new File(newFilePath);
 
