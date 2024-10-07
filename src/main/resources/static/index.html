@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="styles.css" rel="stylesheet">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
         <script src="index.js"></script>
         <title>
             Equipment Calculator Website
@@ -19,7 +20,7 @@
         <h1>HSR Equipment Calculator</h1>
         <p>Input your character and relic to calculate a relic score</p>
         <form id="uploadForm" action="http://localhost:8080/upload" method="post" enctype="multipart/form-data">
-            <fieldset>
+            <fieldset> <!--add sidebar with past relics with character and date/time-->
                 <div class="dropdown-container">
                     <label for="custom-select">Select a Character: </label>
                     <div class="dropdown">
@@ -28,74 +29,74 @@
                             <div class="submenu">
                                 <a href="#">Amplifier</a>
                                 <div class="submenu-content">
-                                    <a href="#" data-value="">Asta <img src="images/asta.png"></a>
-                                    <a href="#" data-value="">Bronya <img src="images/bronya.png"></a>
-                                    <a href="#" data-value="">Hanya <img src="images/hanya.png"></a>
-                                    <a href="#" data-value="">Harmony MC <img src="images/mc.png"></a>
-                                    <a href="#" data-value="">Pela <img src="images/pela.png"></a>
-                                    <a href="#" data-value="">Robin <img src="images/robin.png"></a>
-                                    <a href="#" data-value="">Ruan Mei <img src="images/ruan mei.png"></a>
-                                    <a href="#" data-value="">Silver Wolf <img src="images/silver wolf.png"></a>
-                                    <a href="#" data-value="">Sparkle <img src="images/sparkle.png"></a>
-                                    <a href="#" data-value="">Tingyun <img src="images/tingyun.png"></a>
-                                    <a href="#" data-value="">Yukong <img src="images/yukong.png"></a>
+                                    <a href="#" data-value="">Asta <img src="images/characters/asta.png"></a>
+                                    <a href="#" data-value="">Bronya <img src="images/characters/bronya.png"></a>
+                                    <a href="#" data-value="">Hanya <img src="images/characters/hanya.png"></a>
+                                    <a href="#" data-value="">Harmony MC <img src="images/characters/mc.png"></a>
+                                    <a href="#" data-value="">Pela <img src="images/characters/pela.png"></a>
+                                    <a href="#" data-value="">Robin <img src="images/characters/robin.png"></a>
+                                    <a href="#" data-value="">Ruan Mei <img src="images/characters/ruan mei.png"></a>
+                                    <a href="#" data-value="">Silver Wolf <img src="images/characters/silver wolf.png"></a>
+                                    <a href="#" data-value="">Sparkle <img src="images/characters/sparkle.png"></a>
+                                    <a href="#" data-value="">Tingyun <img src="images/characters/tingyun.png"></a>
+                                    <a href="#" data-value="">Yukong <img src="images/characters/yukong.png"></a>
                                 </div>
                             </div>
                             <div class="submenu">
                                 <a href="#">Damage Dealer</a> 
                                 <div class="submenu-content">
-                                    <a href="#" data-value="">Acheron <img src="images/acheron.png"></a>
-                                    <a href="#" data-value="">Argenti <img src="images/argenti.png"></a>
-                                    <a href="#" data-value="">Arlan <img src="images/arlan.png"></a>
-                                    <a href="#" data-value="">Blade <img src="images/blade.png"></a>
-                                    <a href="#" data-value="">Clara <img src="images/clara.png"></a>
-                                    <a href="#" data-value="">Dan Heng <img src="images/dan heng.png"></a>
-                                    <a href="#" data-value="">Dan Hang IL <img src="images/dhil.png"></a>
-                                    <a href="#" data-value="">Destruction MC <img src="images/mc.png"></a>
-                                    <a href="#" data-value="">Dr. Ratio <img src="images/dr ratio.png"></a>
-                                    <a href="#" data-value="">Herta <img src="images/herta.png"></a>
-                                    <a href="#" data-value="">Himeko <img src="images/himeko.png"></a>
-                                    <a href="#" data-value="">Hook <img src="images/hook.png"></a>
-                                    <a href="#" data-value="">Jingliu <img src="images/jingliu.png"></a>
-                                    <a href="#" data-value="">Jing Yuan <img src="images/jing yuan.png"></a>
-                                    <a href="#" data-value="">Misha <img src="images/misha.png"></a>
-                                    <a href="#" data-value="">Qingque <img src="images/qingque.png"></a>
-                                    <a href="#" data-value="">Seele <img src="images/seele.png"></a>
-                                    <a href="#" data-value="">Serval <img src="images/serval.png"></a>
-                                    <a href="#" data-value="">Yanqing <img src="images/yanqing.png"></a>
+                                    <a href="#" data-value="">Acheron <img src="images/characters/acheron.png"></a>
+                                    <a href="#" data-value="">Argenti <img src="images/characters/argenti.png"></a>
+                                    <a href="#" data-value="">Arlan <img src="images/characters/arlan.png"></a>
+                                    <a href="#" data-value="">Blade <img src="images/characters/blade.png"></a>
+                                    <a href="#" data-value="">Clara <img src="images/characters/clara.png"></a>
+                                    <a href="#" data-value="">Dan Heng <img src="images/characters/dan heng.png"></a>
+                                    <a href="#" data-value="">Dan Hang IL <img src="images/characters/dhil.png"></a>
+                                    <a href="#" data-value="">Destruction MC <img src="images/characters/mc.png"></a>
+                                    <a href="#" data-value="">Dr. Ratio <img src="images/characters/dr ratio.png"></a>
+                                    <a href="#" data-value="">Herta <img src="images/characters/herta.png"></a>
+                                    <a href="#" data-value="">Himeko <img src="images/characters/himeko.png"></a>
+                                    <a href="#" data-value="">Hook <img src="images/characters/hook.png"></a>
+                                    <a href="#" data-value="">Jingliu <img src="images/characters/jingliu.png"></a>
+                                    <a href="#" data-value="">Jing Yuan <img src="images/characters/jing yuan.png"></a>
+                                    <a href="#" data-value="">Misha <img src="images/characters/misha.png"></a>
+                                    <a href="#" data-value="">Qingque <img src="images/characters/qingque.png"></a>
+                                    <a href="#" data-value="">Seele <img src="images/characters/seele.png"></a>
+                                    <a href="#" data-value="">Serval <img src="images/characters/serval.png"></a>
+                                    <a href="#" data-value="">Yanqing <img src="images/characters/yanqing.png"></a>
                                 </div>
                             </div>
                             <div class="submenu">
                                 <a href="#">Specialist</a>
                                 <div class="submenu-content">
-                                    <a href="#" data-value="">Black Swan <img src="images/black swan.png"></a>
-                                    <a href="#" data-value="">Boothill <img src="images/boothill.png"></a>
-                                    <a href="#" data-value="">Firefly <img src="images/firefly.png"></a>
-                                    <a href="#" data-value="">Guinafen <img src="images/guinafen.png"></a>
-                                    <a href="#" data-value="">Jade <img src="images/jade.png"></a>
-                                    <a href="#" data-value="">Kafka <img src="images/kafka.png"></a>
-                                    <a href="#" data-value="">Luka <img src="images/luka.png"></a>
-                                    <a href="#" data-value="">Preservation MC <img src="images/mc.png"></a>
-                                    <a href="#" data-value="">Sampo <img src="images/sampo.png"></a>
-                                    <a href="#" data-value="">Sushang <img src="images/sushang.png"></a>
-                                    <a href="#" data-value="">Topaz <img src="images/topaz.png"></a>
-                                    <a href="#" data-value="">Xueyi <img src="images/xueyi.png"></a>
-                                    <a href="#" data-value="">Welt <img src="images/welt.png"></a>
+                                    <a href="#" data-value="">Black Swan <img src="images/characters/black swan.png"></a>
+                                    <a href="#" data-value="">Boothill <img src="images/characters/boothill.png"></a>
+                                    <a href="#" data-value="">Firefly <img src="images/characters/firefly.png"></a>
+                                    <a href="#" data-value="">Guinafen <img src="images/characters/guinafen.png"></a>
+                                    <a href="#" data-value="">Jade <img src="images/characters/jade.png"></a>
+                                    <a href="#" data-value="">Kafka <img src="images/characters/kafka.png"></a>
+                                    <a href="#" data-value="">Luka <img src="images/characters/luka.png"></a>
+                                    <a href="#" data-value="">Preservation MC <img src="images/characters/mc.png"></a>
+                                    <a href="#" data-value="">Sampo <img src="images/characters/sampo.png"></a>
+                                    <a href="#" data-value="">Sushang <img src="images/characters/sushang.png"></a>
+                                    <a href="#" data-value="">Topaz <img src="images/characters/topaz.png"></a>
+                                    <a href="#" data-value="">Xueyi <img src="images/characters/xueyi.png"></a>
+                                    <a href="#" data-value="">Welt <img src="images/characters/welt.png"></a>
                                 </div>
                             </div>
                             <div class="submenu">
                                 <a href="#">Sustain</a>
                                 <div class="submenu-content">
-                                    <a href="#" data-value="">Aventurine <img src="images/aventurine.png"></a>
-                                    <a href="#" data-value="">Bailu <img src="images/bailu.png"></a>
-                                    <a href="#" data-value="">Fu Xuan <img src="images/fu xuan.png"></a>
-                                    <a href="#" data-value="">Gallagher <img src="images/gallagher.png"></a>
-                                    <a href="#" data-value="">Gepard <img src="images/gepard.png"></a>
-                                    <a href="#" data-value="">Huohuo <img src="images/huohuo.png"></a>
-                                    <a href="#" data-value="">Luocha <img src="images/luocha.png"></a>
-                                    <a href="#" data-value="">Lynx <img src="images/lynx.png"></a>
-                                    <a href="#" data-value="">March 7th <img src="images/march 7th.png"></a>
-                                    <a href="#" data-value="">Natasha <img src="images/natasha.png"></a>
+                                    <a href="#" data-value="">Aventurine <img src="images/characters/aventurine.png"></a>
+                                    <a href="#" data-value="">Bailu <img src="images/characters/bailu.png"></a>
+                                    <a href="#" data-value="">Fu Xuan <img src="images/characters/fu xuan.png"></a>
+                                    <a href="#" data-value="">Gallagher <img src="images/characters/gallagher.png"></a>
+                                    <a href="#" data-value="">Gepard <img src="images/characters/gepard.png"></a>
+                                    <a href="#" data-value="">Huohuo <img src="images/characters/huohuo.png"></a>
+                                    <a href="#" data-value="">Luocha <img src="images/characters/luocha.png"></a>
+                                    <a href="#" data-value="">Lynx <img src="images/characters/lynx.png"></a>
+                                    <a href="#" data-value="">March 7th <img src="images/characters/march 7th.png"></a>
+                                    <a href="#" data-value="">Natasha <img src="images/characters/natasha.png"></a>
                                 </div>
                             </div>
                             <!-- Simulated validation "tooltip" popup -->
