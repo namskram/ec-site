@@ -54,6 +54,10 @@ fieldset:last-of-type {
     border-bottom: none;
     text-align: center;
 }
+
+label:first-of-type {
+    margin: 0 0 0.5rem;
+}
   
 label {
     display: block;
@@ -224,6 +228,12 @@ input[type="file"] {
     margin-left: 10px;
 }
 
+.char-image-box {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+}
+
 #char-img {
     margin-top: 10px;
     width: 150px;
@@ -239,4 +249,5 @@ input[type="file"] {
     display: block;
     visibility: hidden;
     border: solid 2px black;
+    width: 300px;
 }

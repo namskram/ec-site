@@ -101,7 +101,7 @@ public class Specialist extends CharacterType {
             put("Luka", "DOT");
             put("Sampo", "DOT");
             put("Xueyi", "Break");
-            put("Guinafen", "DOT");
+            put("Guinaifen", "DOT");
             put("Jade", "Generic");
             put("Welt", "Generic");
             put("Sushang", "Break");

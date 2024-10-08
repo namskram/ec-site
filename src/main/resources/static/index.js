@@ -4,11 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorTooltip = document.getElementById('dropdown-error');
     const form = document.getElementById('uploadForm');
     const confirmationMessage = document.getElementById('confirmation-message'); // New message div
+    const charImage = document.getElementById('char-img')
 
     function selectOption(optionText) {
         const selectBtn = document.querySelector('.select-btn');
+        const charImgFIle = "images/char-img-full/" + optionText + ".webp";
         selectBtn.textContent = optionText;
         hiddenInput.value = optionText;
+        charImage.src = charImgFIle;
+        charImage.style.height = '300px';
+        charImage.style.width = 'auto';
+        charImage.style.marginTop = '0';
+        
 
         if (optionText !== "(Select One)") {
             errorTooltip.style.display = 'none';
