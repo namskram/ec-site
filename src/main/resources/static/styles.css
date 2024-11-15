@@ -35,6 +35,42 @@ p {
     margin: 1em auto;
     text-align: center;
 }
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px; /* Adjust width as needed */
+    padding: 20px;
+    background-color: #2d2d50; /* Light background color for contrast */
+    border-right: 2px solid #ccc; /* Optional border for separation */
+    position: fixed; /* Fixed position to stay on the side */
+    top: 0;
+    left: 0; /* Position on the left */
+    height: 100vh;
+    overflow-y: auto; /* Scroll if content overflows */
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd; /* Separator between items */
+}
+
+/* Optional styling for recent calculations */
+.sidebar ul li img {
+    width: 40px; /* Size for character images */
+    margin-right: 10px;
+    vertical-align: middle;
+}
   
 form {
     width: 60vw;
