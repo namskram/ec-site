@@ -36,9 +36,6 @@ public class ImagePreprocessingService {
         // Save the processed image
         Imgcodecs.imwrite(newFile, denoisedImage);
 
-        // FOR DEBUGGING
-        // System.out.println("Image processing completed. Output saved at: " + newFile);
-
         return newFile;
     }
 }

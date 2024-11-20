@@ -46,9 +46,6 @@ public class Sustain extends CharacterType {
         setTypes();
         setType(name);
         setWeights();
-
-        // FOR DEBUGGING
-        // System.out.println("Initializing Sustain: " + name);
     }
 
     @Override

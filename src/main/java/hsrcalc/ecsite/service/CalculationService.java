@@ -33,14 +33,10 @@ public class CalculationService {
                                             InstantiationException, IllegalAccessException, 
                                             IllegalArgumentException, InvocationTargetException {
         
-        // FOR DEBUGGING
-        // System.out.println("Service is working:");
         System.out.println("Character: " + charName);
         System.out.println("File Name: " + file.getName());
-        // System.out.println("FIle Path: " + file.getAbsolutePath());
 
         String newFilePath = ImagePreprocessingService.modifyImage(file.getAbsolutePath());
-        // System.out.println("New File Path: " + newFilePath);
 
         File newFile = new File(newFilePath);
 
@@ -56,31 +52,17 @@ public class CalculationService {
         ITesseract tesseract = new Tesseract();
         try {
             String text = tesseract.doOCR(file);
-
-            // FOR DEBUGGING
-            // System.out.println("Original:");
-            // System.out.println(text);
             
             String[] keywords = {"ATK", "DEF", "HP", "CRIT DMG", "CRIT Rate", "Break Effect", 
                                 "Effect Hit Rate", "Effect RES", "SPD"};
             String filteredText = includeStringsWithPercentage(text, keywords);
 
-            // FOR DEBUGGING
-            System.out.println();
-            System.out.println("Overall Stats:");
-            System.out.println(filteredText + "\n");
-
             Map<String, Double> vals = filteredTextToDictionary(filteredText);
             // Ignore main stats, assuming BIS already
             Map<String, Double> newVals = removeFirstPair(vals);
 
-            // FOR DEBUGGING
-            // System.out.println("test: " + newVals);
-
             Double score = calculateScores(charName, newVals);
             Double roundedScore = round(score, 2);
-            // System.out.println("Relic Score: " + roundedScore);
-            // System.out.println("------------------------------ \n");
 
             return roundedScore;
             
@@ -95,8 +77,6 @@ public class CalculationService {
         StringBuilder filteredText = new StringBuilder();
         // Normalize line endings and remove extra spaces/newlines
         text = text.replaceAll("\\r\\n|\\r|\\n", " ").replaceAll("\\s{2,}", " ").trim();
-        // FOR DEBUGGING
-        // System.out.println("regex text: " + text);
         
         for (String includeString : includeStrings) {
             // Escape special characters in the keyword for regex
@@ -143,12 +123,8 @@ public class CalculationService {
         String[] lines = filteredText.split("\\n");
         
         for (String line : lines) {
-            // FOR DEBUGGING
-            // System.out.println("Processing line: " + line);
             int lastSpaceIndex = line.lastIndexOf(' ');
             if (lastSpaceIndex == -1) {
-                // FOR DEBUGGING
-                System.err.println("No space found in line: " + line);
                 continue;
             }
             String key = line.substring(0, lastSpaceIndex).trim();
@@ -189,8 +165,6 @@ public class CalculationService {
                                               IllegalAccessException, IllegalArgumentException, InvocationTargetException {
         
         String classType = classChecker(charName);
-        // FOR DEBUGGING
-        // System.out.println("class type: " + classType);
 
         String className = "hsrcalc.ecsite.domain.CharacterTypes." + classType;
         Class cl = Class.forName(className);
@@ -204,19 +178,6 @@ public class CalculationService {
         Double score = 0.0;
         Map<String, Double> weights = (Map<String, Double>)m1.invoke(charObject);
         Map<String, Double> rolls = (Map<String, Double>)m2.invoke(charObject);
-
-        // FOR DEBUGGING
-        /*
-        System.out.println("Weights:");
-        for (Map.Entry<String, Double> entry: weights.entrySet()) {
-            System.out.println(entry.getKey() + ", " + entry.getValue());
-        }
-        System.out.println();
-        System.out.println("Avg Rolls:");
-        for (Map.Entry<String, Double> entry: rolls.entrySet()) {
-            System.out.println(entry.getKey() + ", " + entry.getValue());
-        }
-        */
 
         for (Map.Entry<String, Double> entry: stats.entrySet()) {
             String stat = entry.getKey();

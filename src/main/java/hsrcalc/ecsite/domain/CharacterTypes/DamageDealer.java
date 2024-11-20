@@ -42,9 +42,6 @@ public class DamageDealer extends CharacterType {
         this.name = name;
         setChars();
         setWeights();
-
-        // FOR DEBUGGING
-        // System.out.println("Initializing Damage Dealer: " + name);
     }
 
     @Override

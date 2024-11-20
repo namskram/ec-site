@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CalculationRepository extends JpaRepository<Calculation, Long> {
-    // Custom queries can be added here later if needed
+    // Add custom queries here later if needed
 }
